@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CA6AC9E5-836F-34F6-B40F-4A21E85D9442}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\VST_SDK\vst3sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\VST_SDK\vst3sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\VST_SDK\vst3sdk\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/VST_SDK/vst3sdk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/projects/github/arvin-distort_pedal -BD:/projects/github/arvin-distort_pedal/build --check-stamp-file D:/projects/github/arvin-distort_pedal/build/vst3sdk/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakePrintHelpers.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckLanguage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_AAXSupport.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_AddCommonOptions.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_AddSMTGLibrary.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_AddVST3Library.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_AddVST3Options.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_Bundle.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_CodeSign.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_ConfigureCmakeGenerator.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_CoreAudioSupport.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_CustomModuleTarget.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_DetectPlatform.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_ExportedSymbols.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_FindJack.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_Global.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_PlatformIOS.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_PlatformToolset.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_Platform_Windows.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_PrefixHeader.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_SetDebugExecutable.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_SetupVST3LibraryDefaultPath.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_UniversalBinary.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_VST3_SDK.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_VstGuiSupport.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\projects\github\arvin-distort_pedal\build\vst3sdk\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/VST_SDK/vst3sdk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/projects/github/arvin-distort_pedal -BD:/projects/github/arvin-distort_pedal/build --check-stamp-file D:/projects/github/arvin-distort_pedal/build/vst3sdk/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakePrintHelpers.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckLanguage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_AAXSupport.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_AddCommonOptions.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_AddSMTGLibrary.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_AddVST3Library.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_AddVST3Options.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_Bundle.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_CodeSign.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_ConfigureCmakeGenerator.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_CoreAudioSupport.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_CustomModuleTarget.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_DetectPlatform.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_ExportedSymbols.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_FindJack.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_Global.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_PlatformIOS.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_PlatformToolset.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_Platform_Windows.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_PrefixHeader.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_SetDebugExecutable.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_SetupVST3LibraryDefaultPath.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_UniversalBinary.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_VST3_SDK.cmake;C:\VST_SDK\vst3sdk\cmake\modules\SMTG_VstGuiSupport.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\projects\github\arvin-distort_pedal\build\vst3sdk\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\projects\github\arvin-distort_pedal\build\ZERO_CHECK.vcxproj">
+      <Project>{E8ED9F4B-F33A-399A-9A96-7EE9D6318891}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\projects\github\arvin-distort_pedal\build\vst3sdk\public.sdk\samples\vst-hosting\inspectorapp\VST3Inspector.vcxproj">
+      <Project>{D178B6F8-8191-38FA-8EAD-BFAB686632FF}</Project>
+      <Name>VST3Inspector</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\projects\github\arvin-distort_pedal\build\vst3sdk\base\base.vcxproj">
+      <Project>{60BB4E64-D474-3D80-9C60-FDA3ACBB1821}</Project>
+      <Name>base</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\projects\github\arvin-distort_pedal\build\vst3sdk\public.sdk\samples\vst-utilities\moduleinfotool\moduleinfotool.vcxproj">
+      <Project>{0F9437AB-1CEE-3F9B-8F4C-02C937563753}</Project>
+      <Name>moduleinfotool</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\projects\github\arvin-distort_pedal\build\vst3sdk\pluginterfaces\pluginterfaces.vcxproj">
+      <Project>{99BB7258-91BD-3C73-B325-724D1ED51F10}</Project>
+      <Name>pluginterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\projects\github\arvin-distort_pedal\build\vst3sdk\public.sdk\sdk.vcxproj">
+      <Project>{C89548BB-6012-300E-8AA7-1BAC55DAFEC9}</Project>
+      <Name>sdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\projects\github\arvin-distort_pedal\build\vst3sdk\public.sdk\sdk_common.vcxproj">
+      <Project>{26CF0F1A-8AB9-3CC3-BE49-D7C47BFAD121}</Project>
+      <Name>sdk_common</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\projects\github\arvin-distort_pedal\build\vst3sdk\public.sdk\sdk_hosting.vcxproj">
+      <Project>{3C5C76E0-21E4-3503-BF01-05C58FF7DC33}</Project>
+      <Name>sdk_hosting</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\projects\github\arvin-distort_pedal\build\vst3sdk\public.sdk\samples\vst-hosting\validator\validator.vcxproj">
+      <Project>{49254DF6-073A-3B30-A846-FED252488E53}</Project>
+      <Name>validator</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\projects\github\arvin-distort_pedal\build\vst3sdk\VSTGUI.build\vstgui\lib\vstgui.vcxproj">
+      <Project>{B6DA58C8-A244-3019-803E-0A755705D047}</Project>
+      <Name>vstgui</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\projects\github\arvin-distort_pedal\build\vst3sdk\VSTGUI.build\vstgui\standalone\vstgui_standalone.vcxproj">
+      <Project>{2E1DE6EE-C714-3504-8085-C00FEE71D3AB}</Project>
+      <Name>vstgui_standalone</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\projects\github\arvin-distort_pedal\build\vst3sdk\vstgui_support.vcxproj">
+      <Project>{AFA88B1C-94A0-364E-8750-B8090429DBF9}</Project>
+      <Name>vstgui_support</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\projects\github\arvin-distort_pedal\build\vst3sdk\VSTGUI.build\vstgui\uidescription\vstgui_uidescription.vcxproj">
+      <Project>{F2CC2DE3-3B0C-3EC1-88B1-5E2918BB13AC}</Project>
+      <Name>vstgui_uidescription</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
